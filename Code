@@ -1,0 +1,9 @@
+@echo off
+title madisons game
+color 2
+main:
+echo start
+echo settings
+echo exit
+goto main
+cls
