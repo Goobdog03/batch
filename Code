@@ -8,3 +8,4 @@ echo exit
 goto main
 cls
 if %start% goto main
+if %settings% goto main
