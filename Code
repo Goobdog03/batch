@@ -1,11 +1,82 @@
 @echo off
-title madisons game
-color 2
-main:
-echo start
-echo settings
-echo exit
-goto main
+color cf
+title Madison game
+:main
 cls
-if %start% goto main
-if %settings% goto main
+echo.
+echo - - - - - - - - - - - - - - - 
+echo.
+echo     Welcome to the game
+echo
+echo - - - - - - - - - - - - - - - 
+echo.
+echo 1) start game
+echo 2) settings
+echo 3) exit
+echo 4) credits
+set /p main=choice1~4
+if %main%==1 goto signin
+if %main%==2 goto settings
+if %main%==3 goto /a
+if %main%==4 goto lilly
+:settings
+cls
+echo welcome to the settings
+echo 1) help
+echo 2) go to main
+echo 3) dev entrance
+set /p settings=choice1~3
+if %settings%==1 goto help
+if %settings%==2 goto main
+if %settings%==3 goto dev
+:dev
+cls
+color 2
+echo welcome to the dev dashbord
+echo 1) color of screen
+echo 2) dev cheats
+echo 3) main
+echo 4) reset
+set /p dev=choice1~4
+if %dev%==1 goto screen
+if %dev%==2 goto cheats
+if %dev%==3 goto main
+if %dev%==4 goto reset
+:signin
+cls
+color cf
+echo 1) sign in
+echo 2) sign up
+set /p account=choice1~4
+if %account%==1 goto account
+if %account%==2 goto signup
+:signup
+cls
+echo enter username
+set /p username=%username%
+cls
+echo enter password
+set /p password=%password%
+cls
+echo did you enter them correctly
+echo yes or no
+set /p acver=choice1~2
+if %acver%==yes goto sign in
+if %acver%==no goto signup
+cls
+:account
+echo please enter username
+set /p user=
+if %user%==%username% goto password
+goto retry
+:retry
+echo You misstyped your username 
+echo or pass please enter it again
+pause
+goto account
+:password
+echo please enter your password
+set /p pass=
+if %pass%==%password% goto start
+goto retry
+:start
