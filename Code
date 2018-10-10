@@ -7,3 +7,4 @@ echo settings
 echo exit
 goto main
 cls
+if %start% goto main
