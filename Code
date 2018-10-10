@@ -3,18 +3,18 @@ color cf
 title Madison game
 :main
 cls
-echo.
+echo
 echo - - - - - - - - - - - - - - - 
-echo.
+echo
 echo     Welcome to the game
 echo
 echo - - - - - - - - - - - - - - - 
-echo.
+echo
 echo 1) start game
 echo 2) settings
 echo 3) exit
 echo 4) credits
-set /p main=choice1~4
+set /p main=
 if %main%==1 goto signin
 if %main%==2 goto settings
 if %main%==3 goto /a
@@ -25,7 +25,7 @@ echo welcome to the settings
 echo 1) help
 echo 2) go to main
 echo 3) dev entrance
-set /p settings=choice1~3
+set /p settings=
 if %settings%==1 goto help
 if %settings%==2 goto main
 if %settings%==3 goto dev
@@ -37,7 +37,7 @@ echo 1) color of screen
 echo 2) dev cheats
 echo 3) main
 echo 4) reset
-set /p dev=choice1~4
+set /p dev=
 if %dev%==1 goto screen
 if %dev%==2 goto cheats
 if %dev%==3 goto main
@@ -47,21 +47,23 @@ cls
 color cf
 echo 1) sign in
 echo 2) sign up
-set /p account=choice1~4
+set /p account=
 if %account%==1 goto account
 if %account%==2 goto signup
 :signup
 cls
 echo enter username
 set /p username=%username%
+goto pass
 cls
+:pass
 echo enter password
 set /p password=%password%
 cls
 echo did you enter them correctly
 echo yes or no
-set /p acver=choice1~2
-if %acver%==yes goto sign in
+set /p acver=
+if %acver%==yes goto signin
 if %acver%==no goto signup
 cls
 :account
